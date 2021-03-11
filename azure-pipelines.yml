@@ -1,17 +1,19 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+jobs:
+- job: Find-Union
+  pool:
+    vmImage: debian-10
 
-steps:
-- script: |
-    sudo apt-get update
-    sudo apt-get install -y wget cmake g++
-  displayName: 'Installation of additional packages'
+  steps:
+  - script: |
+      sudo apt-get update
+      sudo apt-get install -y wget cmake g++
+    displayName: 'Installation of additional packages'
 
-- script: sh build.sh
-  displayName: 'build project'
+  - script: sh build.sh
+    displayName: 'build project'
 
-- script: sh test.sh
-  displayName: 'test project'
+  - script: sh test.sh
+    displayName: 'test project'
