@@ -5,8 +5,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- run: apt-get update
-- run: apt-get install -y cmake g++
+- script: |
+    apt-get update
+    apt-get install -y cmake g++
 
 - script: cmake .
   displayName: 'cmake project configuration'
