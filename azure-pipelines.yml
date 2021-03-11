@@ -17,6 +17,8 @@ steps:
     make
     cd -
     cmake .
+    make clean
+    make
   displayName: 'cmake project configuration'
 
 - script: |
