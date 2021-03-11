@@ -10,21 +10,8 @@ steps:
     sudo apt-get install -y wget cmake g++
   displayName: 'Installation of additional packages'
 
-- script: |
-    wget -qO- https://github.com/google/googletest/archive/release-1.10.0.tar.gz | tar xvzf -
-    cd googletest-release-1.10.0
-    cmake .
-    make
-    cd -
-    cmake .
-    make clean
-    make
-  displayName: 'cmake project configuration'
-
-- script: |
-    make clean
-    make
+- script: sh build.sh
   displayName: 'build project'
 
-- script: make test
+- script: sh test.sh
   displayName: 'test project'
