@@ -6,7 +6,7 @@ IF( NOT CMAKE_BUILD_TYPE )
 ENDIF()
 
 # Gtest installation
-SET( GTEST_HOME "./googletest-release-1.10.0" )
+SET( GTEST_HOME "googletest-release-1.10.0" )
 SET( GTEST_HEADERS
 
     ${GTEST_HOME}/googletest/include
