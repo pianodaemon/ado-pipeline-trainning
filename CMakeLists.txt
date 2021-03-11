@@ -1,8 +1,9 @@
 PROJECT( ufalgo )
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0)
 
-# build shared library
-#FIND_PACKAGE(Threads REQUIRED)
+IF( NOT CMAKE_BUILD_TYPE )
+    SET( CMAKE_BUILD_TYPE DEBUG )
+ENDIF()
 
 # Gtest installation
 SET( GTEST_HOME "/home/j4nusx/other/googletest-release-1.10.0" )
@@ -16,6 +17,8 @@ SET( GTEST_LIBS
     ${GTEST_HOME}/lib/libgtest_main.a
 )
 
+ENABLE_TESTING()
+
 INCLUDE_DIRECTORIES(
     includes
 
@@ -25,8 +28,12 @@ INCLUDE_DIRECTORIES(
 SET( SOURCE_PATH src )
 
 SET( TESTING_SOURCE_PATH test )
-
-SET( CMAKE_CXX_FLAGS "-g -pedantic-errors -Wall -std=c++11" )
+SET( CMAKE_CXX_STANDARD 11 )
+SET( CMAKE_CXX_STANDARD_REQUIRED ON )
+SET( CMAKE_CXX_EXTENSIONS OFF )
+SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic-errors -Wall" )
+SET( CMAKE_CXX_FLAGS_DEBUG "-ggdb" )
+SET( CMAKE_CXX_FLAGS_RELEASE "-O1" )
 
 SET( CPP
     ${SOURCE_PATH}/main.cpp
@@ -36,7 +43,6 @@ SET( CPP
 
 ADD_EXECUTABLE(
     ${PROJECT_NAME}
-    ${HPP}
     ${CPP}
 )
 

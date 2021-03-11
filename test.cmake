@@ -5,17 +5,15 @@ SET(UNION_FIND_UT_SRC
     ${TESTING_SOURCE_PATH}/union_find_ut.cpp
 )
 
-SET( UNION_FIND_EXE_UT union_find_ut )
+SET( UNION_FIND_EXE_UT "${PROJECT_NAME}_ut" )
 
 ADD_EXECUTABLE(
     ${UNION_FIND_EXE_UT}
-    ${HPP}
     ${UNION_FIND_UT_SRC}
 )
 
 TARGET_LINK_LIBRARIES( ${UNION_FIND_EXE_UT}
 
-#    ${CMAKE_THREAD_LIBS_INIT}
     -pthread
 
     # Static libraries ( from this point onward )
