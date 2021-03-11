@@ -3,9 +3,11 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  demands: cmake g++
-  
+
 steps:
+- run: apt-get update
+- run: apt-get install -y cmake g++
+
 - script: cmake .
   displayName: 'cmake project configuration'
 
