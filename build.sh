@@ -9,4 +9,5 @@ make
 cd -
 cmake .
 make clean
+echo "gtest directory : $GTEST"
 make
