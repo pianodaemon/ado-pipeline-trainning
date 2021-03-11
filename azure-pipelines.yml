@@ -13,6 +13,7 @@ steps:
 - script: |
     wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz
     tar xvzf release-1.10.0.tar.gz
+    cd release-1.10.0
     cmake .
     make
   displayName: 'gtest installation as static library'
