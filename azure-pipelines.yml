@@ -15,9 +15,8 @@ steps:
     cd googletest-release-1.10.0
     cmake .
     make
-  displayName: 'gtest installation as static library'
-
-- script: cmake .
+    cd -
+    cmake .
   displayName: 'cmake project configuration'
 
 - script: |
