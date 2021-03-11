@@ -22,7 +22,7 @@ ENABLE_TESTING()
 INCLUDE_DIRECTORIES(
     includes
 
-    ${GTEST_HEADERS}/include
+    ${GTEST_HEADERS}
 )
 
 SET( SOURCE_PATH src )
