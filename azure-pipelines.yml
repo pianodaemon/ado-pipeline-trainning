@@ -8,10 +8,14 @@ steps:
 - script: |
     sudo apt-get update
     sudo apt-get install -y wget cmake g++
+  displayName: 'Installation of additional packages'
+
 - script: |
     wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz
     tar xvzf release-1.10.0.tar.gz
     cmake .
+    make
+  displayName: 'gtest installation as static library'
 
 - script: cmake .
   displayName: 'cmake project configuration'
