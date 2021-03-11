@@ -7,7 +7,11 @@ pool:
 steps:
 - script: |
     sudo apt-get update
-    sudo apt-get install -y cmake g++
+    sudo apt-get install -y wget cmake g++
+- script: |
+    wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz
+    tar xvzf release-1.10.0.tar.gz
+    cmake .
 
 - script: cmake .
   displayName: 'cmake project configuration'
