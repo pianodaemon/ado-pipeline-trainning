@@ -2,7 +2,7 @@ trigger:
 - master
 
 jobs:
-- job: Find-Union
+- job: FindUnion
   pool:
     vmImage: debian-10
 
