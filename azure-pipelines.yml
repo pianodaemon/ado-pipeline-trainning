@@ -7,6 +7,13 @@ jobs:
     vmImage: ubuntu-latest
 
   steps:
+  - task: AzureKeyVault@1
+    inputs:
+      azureSubscription: 'Azure subscription 1'
+      keyVaultName: 'ramp-up-kv'
+      secretsFilter: '*'
+      runAsPreJob: false
+
   - script: |
       sudo apt-get update
       sudo apt-get install -y wget cmake g++
