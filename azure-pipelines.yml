@@ -9,7 +9,7 @@ jobs:
   steps:
   - task: AzureKeyVault@1
     inputs:
-      azureSubscription: 'f26db95a-32ff-486c-976e-1a63b1486f21'
+      azureSubscription: 'ramp-up-kv-service'
       keyVaultName: 'ramp-up-kv'
       secretsFilter: '*'
       runAsPreJob: false
