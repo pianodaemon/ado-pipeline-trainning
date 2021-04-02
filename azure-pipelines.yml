@@ -8,6 +8,7 @@ jobs:
 
   steps:
   - task: AzureKeyVault@1
+    displayName: 'Download secrets'
     inputs:
       azureSubscription: 'ramp-up-kv-service'
       keyVaultName: 'ramp-up-kv'
