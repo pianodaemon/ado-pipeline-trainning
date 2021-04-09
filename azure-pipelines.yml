@@ -6,7 +6,12 @@ jobs:
   pool:
     vmImage: ubuntu-latest
 
+
   steps:
+  - template: iterable.yml
+    parameters:
+      repositories: ["hugo", "paco", "luis"]
+
   - task: AzureKeyVault@1
     displayName: 'Download secrets'
     inputs:

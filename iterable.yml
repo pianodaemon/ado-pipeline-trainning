@@ -1,0 +1,7 @@
+parameters:
+  repositories: []
+
+steps:
+- ${{ each repo in parameters.repositories }}
+  - script: |
+      echo ${{ repo }}
